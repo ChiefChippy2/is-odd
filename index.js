@@ -8,6 +8,7 @@
 'use strict';
 
 const isNumber = require('is-number');
+const isEven = require('is-even');
 
 module.exports = function isOdd(value) {
   const n = Math.abs(value);
@@ -20,6 +21,6 @@ module.exports = function isOdd(value) {
   if (!Number.isSafeInteger(n)) {
     throw new Error('value exceeds maximum safe integer');
   }
-  return (n % 2) === 1;
+  return !isEven(n);
 };
 
